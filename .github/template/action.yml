@@ -24,10 +24,10 @@ runs:
     shell: bash
     run: |
       echo ${{ inputs.secret }}
-      if [ ${{ inputs.secret }} eq "dev_XD"] ; then
+      if [ "${{ inputs.secret }}" eq "dev_XD"] ; then
         echo "dev"
-      elif [ ${{ inputs.secret }} eq "prod_XD"] ; then
-        echo "pred"
+      elif [ "${{ inputs.secret }}" eq "prod_XD"] ; then
+        echo "prod"
       else
         echo "nie dziala"
       fi
