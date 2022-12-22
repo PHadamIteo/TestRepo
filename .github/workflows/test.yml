@@ -7,11 +7,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_dev:
     runs-on: ubuntu-latest
+    environment: dev
+    env:
+      env_name: dev
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Display file content
-        run: cat test.txt
+        run: |
+          cat test.txt
+          echo ${{ env.env_name }}
+
+  build_prod:
+    runs-on: ubuntu-latest
+    environment: prod
+    env:
+      env_name: prod
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Display file content
+        run: |
+          cat test.txt
+          echo ${{ env.env_name }}
