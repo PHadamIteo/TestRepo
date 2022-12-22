@@ -15,19 +15,6 @@ jobs:
         with:
           environment: dev
           secret: ${{ secrets.VERY_SECRET_VARIABLE }}
-      - name: Display secret
-        shell: bash
-        env:
-          SECRET: ${{ secrets.VERY_SECRET_VARIABLE }}
-        run: |
-          echo $SECRET
-          if [ "$SECRET" == "dev_XD"] ; then
-            echo "dev"
-          elif [ "$SECRET" == "prod_XD"] ; then
-            echo "prod"
-          else
-            echo "nie dziala"
-          fi
 
   build_prod:
     runs-on: ubuntu-latest
