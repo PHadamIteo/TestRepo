@@ -16,4 +16,4 @@ runs:
   - name: Display environment
     shell: bash
     run: |
-      echo ${{ env.env_name }}
+      echo ${{ inputs.environment }}
