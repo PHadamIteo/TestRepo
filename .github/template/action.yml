@@ -22,11 +22,13 @@ runs:
 
   - name: Display secret
     shell: bash
+    env:
+      SECRET: ${{ inputs.secret }}
     run: |
-      echo ${{ inputs.secret }}
-      if [ "${{ inputs.secret }}" == "dev_XD"] ; then
+      echo $SECRET
+      if [ "$SECRET" == "dev_XD"] ; then
         echo "dev"
-      elif [ "${{ inputs.secret }}" == "prod_XD"] ; then
+      elif [ "$SECRET" == "prod_XD"] ; then
         echo "prod"
       else
         echo "nie dziala"
