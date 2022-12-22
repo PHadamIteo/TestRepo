@@ -26,9 +26,9 @@ runs:
       SECRET: ${{ inputs.secret }}
     run: |
       echo $SECRET
-      if [ "$SECRET" == "dev_XD"] ; then
+      if [[ "$SECRET" == "dev_XD" ]] ; then
         echo "dev"
-      elif [ "$SECRET" == "prod_XD"] ; then
+      elif [[ "$SECRET" == "prod_XD" ]] ; then
         echo "prod"
       else
         echo "nie dziala"
