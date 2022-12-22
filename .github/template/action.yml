@@ -3,6 +3,8 @@ name: deploy
 inputs:
   environment: 
     required: true
+  secret:
+    required: true
     
 runs:
   using: "composite"
@@ -17,3 +19,16 @@ runs:
     shell: bash
     run: |
       echo ${{ inputs.environment }}
+
+  - name: Display secret
+    shell: bash
+    run: |
+      echo ${{ inputs.secret }}
+      if [ ${{ inputs.secret }} eq "dev_XD"] ; then
+        echo "dev"
+      elif [ ${{ inputs.secret }} eq "prod_XD"] ; then
+        echo "pred"
+      else
+        echo "nie dziala"
+      fi
+        
