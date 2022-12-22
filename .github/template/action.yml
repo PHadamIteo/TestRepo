@@ -6,9 +6,13 @@ inputs:
     
 runs:
   using: "composite"
+  shell: bash
   steps:
 
   - name: Display file content
     run: |
       cat test.txt
+   
+  - name: Display environment
+    run: |
       echo ${{ env.env_name }}
