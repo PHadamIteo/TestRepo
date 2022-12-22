@@ -25,4 +25,4 @@ jobs:
         uses: ./.github/template
         with:
           environment: prod
-          secret: ${{ secret.VERY_SECRET_VARIABLE }}
+          secret: ${{ secrets.VERY_SECRET_VARIABLE }}
