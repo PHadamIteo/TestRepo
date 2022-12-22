@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: deploy
-        uses: ./.github/template/deploy
+        uses: ./.github/templates/test.yml
         with:
           environment: dev
 
@@ -23,6 +23,6 @@ jobs:
 
     steps:
       - name: deploy
-        uses: ./.github/template/deploy
+        uses: ./.github/templates/test.yml
         with:
           environment: prod
