@@ -4,18 +4,16 @@ inputs:
   environment: 
     required: true
     
-defaults:
-  run:
-    shell: bash
-    
 runs:
   using: "composite"
   steps:
 
   - name: Display file content
+    shell: bash
     run: |
       cat test.txt
    
   - name: Display environment
+    shell: bash
     run: |
       echo ${{ env.env_name }}
