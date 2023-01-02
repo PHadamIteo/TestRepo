@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: deploy
-        uses: ./.github/template
+        uses: ./.github/template/test
         with:
           environment: dev
           secret: ${{ secrets.VERY_SECRET_VARIABLE }}
@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: deploy
-        uses: ./.github/template
+        uses: ./.github/template/test
         with:
           environment: prod
           secret: ${{ secrets.VERY_SECRET_VARIABLE }}
